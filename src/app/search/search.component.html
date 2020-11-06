@@ -1,0 +1,6 @@
+
+    <input class="au-input au-input-xl" type="text" name="search"
+        placeholder="Search for products ..." #inputValue (keyup.enter)="searchProducts(inputValue.value)" />
+    <button class="au-btn-submit" (click)="searchProducts(inputValue.value)">
+        Search
+    </button>

@@ -1,0 +1,22 @@
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>email</th>
+            <th>salesPerson</th>
+            <th>Met Quota?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let salesPerson of salesPersonList" [ngClass]="{'highlight': salesPerson.salesVolume >= 5000}">
+            <td>{{salesPerson.firstName}}</td>
+            <td>{{salesPerson.lastName}}</td>
+            <td>{{salesPerson.email}}</td>
+            <td>{{salesPerson.salesVolume | currency:'USD'}}</td>
+            <td *ngIf="salesPerson.salesVolume>=5000;else myBloc">Yes</td>
+            <ng-template #myBloc>No</ng-template>
+        </tr>
+    </tbody>
+</table>
